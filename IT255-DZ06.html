@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ $.ajax({
+url: 'https://httpbin.org/get',
+type: "GET",
+success: function(html){
+var obj = html;
+$("#origin").append("origin: "+obj.origin);
+$("#url").append("url: "+obj.url);
+}
+});
+});
+</script>
+</head>
+<body>
+<div id="origin"></div>
+<div id="url"></div>
+</body>
+</html>
